@@ -6,7 +6,7 @@
     <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/microsoft-openjdk17</packageSourceUrl>
     <title>Microsoft build of OpenJDK 17</title>
     <authors>Microsoft</authors>
-    <owners>JohanJanssen,HealisticEngineer</owners>
+    <owners>HealisticEngineer</owners>
     <licenseUrl>https://github.com/microsoft/openjdk/discussions/2</licenseUrl>
     <projectUrl>https://www.microsoft.com/openjdk</projectUrl>
     <iconUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/microsoft-openjdk.png</iconUrl>
