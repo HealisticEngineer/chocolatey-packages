@@ -2,6 +2,9 @@
 
 This contains my packages, both manually and automatically maintained.
 
+
+Big shout out to [johanjanssen](https://github.com/johanjanssen) for maintaining Microsoft OpenJDK packages before me.
+
 ### Folder Structure
 
 * automatic - where automatic packaging and packages are kept. These are packages that are automatically maintained using [capu](https://github.com/pauby/capu/).
