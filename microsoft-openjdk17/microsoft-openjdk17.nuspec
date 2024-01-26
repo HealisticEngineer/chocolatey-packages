@@ -6,9 +6,10 @@
     <packageSourceUrl>https://github.com/johanjanssen/ChocolateyPackages/tree/master/Microsoft-OpenJDK17</packageSourceUrl>
     <title>Microsoft build of OpenJDK 17</title>
     <authors>Microsoft</authors>
-    <owners>JohanJanssen</owners>
+    <owners>JohanJanssen,HealisticEngineer</owners>
     <licenseUrl>https://github.com/microsoft/openjdk/discussions/2</licenseUrl>
     <projectUrl>https://www.microsoft.com/openjdk</projectUrl>
+    <iconUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/microsoft-openjdk.png</iconUrl>
     <docsUrl>https://www.microsoft.com/openjdk</docsUrl>
     <mailingListUrl>https://www.microsoft.com/openjdk</mailingListUrl>
     <bugTrackerUrl>https://github.com/microsoft/openjdk/discussions</bugTrackerUrl>
