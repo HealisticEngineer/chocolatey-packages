@@ -1,4 +1,5 @@
 $ErrorActionPreference = 'Stop';
+$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url = ''
 $checksum = ''
@@ -12,4 +13,4 @@ $packageArgs = @{
     silentArgs    = "INSTALLLEVEL=3 /quiet"
   }
   
-  Install-ChocolateyPackage @packageArgs
+Install-ChocolateyPackage @packageArgs
