@@ -3,7 +3,7 @@
   <metadata>
     <id>microsoft-openjdk17</id>
     <version>17.0.8</version>
-    <packageSourceUrl>https://github.com/johanjanssen/ChocolateyPackages/tree/master/Microsoft-OpenJDK17</packageSourceUrl>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/microsoft-openjdk17</packageSourceUrl>
     <title>Microsoft build of OpenJDK 17</title>
     <authors>Microsoft</authors>
     <owners>JohanJanssen,HealisticEngineer</owners>
