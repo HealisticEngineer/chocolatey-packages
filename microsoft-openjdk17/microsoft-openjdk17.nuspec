@@ -17,6 +17,7 @@
     <tags>Microsoft java openjdk jvm</tags>
     <summary>Microsoft build of OpenJDK</summary>
     <description>Microsoft OpenJDK is an open source Java Development Kit build of OpenJDK provided by Microsoft.</description>
+    <releaseNotes>https://learn.microsoft.com/en-us/java/openjdk/release-notes</releaseNotes>
   </metadata>
   <files>
     <file src="tools\*.ps1" target="tools" />
