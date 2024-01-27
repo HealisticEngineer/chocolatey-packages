@@ -26,7 +26,7 @@ function global:au_GetLatest {
 
    # Create a hashtable with the URL and version number of the latest update
    $Latest = @{ 
-        URL64 = "https://aka.ms/download-jdk/microsoft-jdk-21-windows-x64.msi"
+        URL64 = "https://aka.ms/download-jdk/microsoft-jdk-$version-windows-x64.msi"
         Version = $Version
    }
    # Return the hashtable
