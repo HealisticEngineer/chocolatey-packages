@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>microsoft-openjdk</id>
+    <version>17.0.0</version>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/microsoft-openjdk17</packageSourceUrl>
+    <title>Microsoft build of OpenJDK</title>
+    <authors>Microsoft</authors>
+    <owners>HealisticEngineer</owners>
+    <licenseUrl>https://github.com/microsoft/openjdk/discussions/2</licenseUrl>
+    <projectUrl>https://www.microsoft.com/openjdk</projectUrl>
+    <iconUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/microsoft-openjdk.png</iconUrl>
+    <docsUrl>https://www.microsoft.com/openjdk</docsUrl>
+    <mailingListUrl>https://www.microsoft.com/openjdk</mailingListUrl>
+    <bugTrackerUrl>https://github.com/microsoft/openjdk/discussions</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/openjdk/jdk</projectSourceUrl>
+    <tags>Microsoft java openjdk jvm</tags>
+    <summary>Microsoft build of OpenJDK</summary>
+    <description>Microsoft OpenJDK is an open source Java Development Kit build of OpenJDK provided by Microsoft</description>
+    <releaseNotes>https://learn.microsoft.com/en-us/java/openjdk/release-notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\*.ps1" target="tools" />
+  </files>
+</package>
