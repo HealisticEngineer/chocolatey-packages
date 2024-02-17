@@ -4,7 +4,7 @@
     <id>microsoft-openjdk-21</id>
     <version>21.0.0</version>
     <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/microsoft-openjdk-21</packageSourceUrl>
-    <title>Microsoft build of OpenJDK</title>
+    <title>Microsoft build of OpenJDK 21</title>
     <authors>Microsoft</authors>
     <owners>HealisticEngineer</owners>
     <licenseUrl>https://github.com/microsoft/openjdk/discussions/2</licenseUrl>
