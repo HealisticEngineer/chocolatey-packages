@@ -16,7 +16,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
 
     # download the page that contains the latest version number
-    $url = https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-release-notes
+    $url = "https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-release-notes"
     # regex expresion to find version number example 1.38
     $regex = ([regex]"version\s(\d+\.\d+)")
     # sort numbers and get highest number
@@ -24,7 +24,7 @@ function global:au_GetLatest {
  
 
     # construct the download url for the latest version
-    $URL64 = https://download.microsoft.com/download/e/a/7/ea70743f-0b72-4607-908b-5015fa6c052d/AzureConnectedMachineAgent.msi
+    $URL64 = "https://download.microsoft.com/download/e/a/7/ea70743f-0b72-4607-908b-5015fa6c052d/AzureConnectedMachineAgent.msi"
     # construct the checksum for the latest version
     $Latest = @{
         URL64 = $URL64
