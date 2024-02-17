@@ -7,7 +7,7 @@
     <title>Azure Arc Enabled Servers</title>
     <authors>Microsoft</authors>
     <owners>HealisticEngineer</owners>
-    <licenseUrl>https://learn.microsoft.com/en-us/legal/azure-arc/license-terms?toc=%2Fazure%2Fazure-arc%2Fservers%2Ftoc.json&bc=%2Fazure%2Fazure-arc%2Fservers%2Fbreadcrumb%2Ftoc.json</licenseUrl>
+    <licenseUrl>https://learn.microsoft.com/en-us/legal/azure-arc/license-terms</licenseUrl>
     <projectUrl>https://learn.microsoft.com/en-us/azure/azure-arc/servers/</projectUrl>
     <iconUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/icons/azure-arc.svg</iconUrl>
     <docsUrl>https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview</docsUrl>
