@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>azure-arc</id>
+    <version>1.30</version>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/microsoft-openjdk17</packageSourceUrl>
+    <title>Azure Arc Enabled Servers</title>
+    <authors>Microsoft</authors>
+    <owners>HealisticEngineer</owners>
+    <licenseUrl>https://learn.microsoft.com/en-us/legal/azure-arc/license-terms?toc=%2Fazure%2Fazure-arc%2Fservers%2Ftoc.json&bc=%2Fazure%2Fazure-arc%2Fservers%2Fbreadcrumb%2Ftoc.json</licenseUrl>
+    <projectUrl>https://learn.microsoft.com/en-us/azure/azure-arc/servers/</projectUrl>
+    <iconUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/icons/azure-arc.svg</iconUrl>
+    <docsUrl>https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview</docsUrl>
+    <mailingListUrl>https://azure.microsoft.com/en-gb/updates/</mailingListUrl>
+    <bugTrackerUrl>https://feedback.azure.com/d365community/forum/5c778dec-0625-ec11-b6e6-000d3a4f0858c</bugTrackerUrl>
+    <tags>microsoft azure-arc</tags>
+    <summary>Azure Arc Enabled Servers</summary>
+    <description>Azure Arc Agent package for easy installation software is provided by Microsoft</description>
+    <releaseNotes>https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-release-notes-archive</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\*.ps1" target="tools" />
+  </files>
+</package>
