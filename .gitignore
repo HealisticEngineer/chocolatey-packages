@@ -1,0 +1,4 @@
+# Exclude .nupkg files
+*.nupkg
+# exclude update_vars.ps1
+update_vars.ps1
