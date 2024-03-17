@@ -12,7 +12,7 @@
     <summary>Microsoft build of OpenJDK</summary>
     <tags>Microsoft java openjdk jvm</tags>
     <projectSourceUrl>https://github.com/openjdk/jdk</projectSourceUrl>
-    <packageSourceUrl>https://github.com/johanjanssen/ChocolateyPackages/tree/master/Microsoft-OpenJDK11</packageSourceUrl>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/microsoft-openjdk11</packageSourceUrl>
     <docsUrl>https://www.microsoft.com/openjdk</docsUrl>
     <mailingListUrl>https://www.microsoft.com/openjdk</mailingListUrl>
     <bugTrackerUrl>https://github.com/microsoft/openjdk/discussions</bugTrackerUrl>
