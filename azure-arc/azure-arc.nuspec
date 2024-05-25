@@ -9,7 +9,7 @@
     <owners>HealisticEngineer</owners>
     <licenseUrl>https://learn.microsoft.com/en-us/legal/azure-arc/license-terms</licenseUrl>
     <projectUrl>https://learn.microsoft.com/en-us/azure/azure-arc/servers/</projectUrl>
-    <iconUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/icons/azure-arc.svg</iconUrl>
+    <iconUrl>https://cdn.statically.io/gh/HealisticEngineer/chocolatey-packages/main/icons/azure-arc.svg</iconUrl>
     <docsUrl>https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview</docsUrl>
     <mailingListUrl>https://azure.microsoft.com/en-gb/updates/</mailingListUrl>
     <bugTrackerUrl>https://feedback.azure.com/d365community/forum/5c778dec-0625-ec11-b6e6-000d3a4f0858c</bugTrackerUrl>

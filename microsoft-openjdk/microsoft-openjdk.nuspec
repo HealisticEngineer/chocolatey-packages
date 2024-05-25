@@ -9,7 +9,7 @@
     <owners>HealisticEngineer</owners>
     <licenseUrl>https://github.com/microsoft/openjdk/discussions/2</licenseUrl>
     <projectUrl>https://www.microsoft.com/openjdk</projectUrl>
-    <iconUrl>https://github.com/HealisticEngineer/chocolatey-packages/blob/main/icons/microsoft-openjdk.png</iconUrl>
+    <iconUrl>https://cdn.statically.io/gh/HealisticEngineer/chocolatey-packages/main/icons/microsoft-openjdk.png</iconUrl>
     <docsUrl>https://www.microsoft.com/openjdk</docsUrl>
     <mailingListUrl>https://www.microsoft.com/openjdk</mailingListUrl>
     <bugTrackerUrl>https://github.com/microsoft/openjdk/discussions</bugTrackerUrl>
