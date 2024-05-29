@@ -20,11 +20,16 @@ function global:au_GetLatest {
     # regex expresion to find version number example 1.38
     $regex = ([regex]"version\s(\d+\.\d+)")
     # sort numbers and get highest number
-    $version = (((iwr $url -UseBasicParsing).RawContent | Select-String "$regex" -AllMatches ).Matches.Value | Sort-Object -Descending -Unique)[0] -split " " | Select-Object -Last 1
+    $version = (((Invoke-WebRequest $url -UseBasicParsing).RawContent | Select-String "$regex" -AllMatches ).Matches.Value | Sort-Object -Descending -Unique)[0] -split " " | Select-Object -Last 1
  
+    # construct the download url for the latest version ( Issue this works only with PS5 will need to fix for PS7)
+    $url = "https://aka.ms/AzureConnectedMachineAgent"
+    $URL64 = (Invoke-WebRequest -MaximumRedirection 0 -Uri $URL -ErrorAction SilentlyContinue).Headers.Location
+    # if the download url is not found, try to get it from the page
+    if ($URL64 -eq $null) {
+        $URL64 = (Invoke-WebRequest -Uri $URL  -ErrorAction SilentlyContinue).baseresponse.RequestMessage.RequestUri.AbsoluteUri
+    }
 
-    # construct the download url for the latest version
-    $URL64 = "https://download.microsoft.com/download/e/a/7/ea70743f-0b72-4607-908b-5015fa6c052d/AzureConnectedMachineAgent.msi"
     # construct the checksum for the latest version
     $Latest = @{
         URL64 = $URL64
