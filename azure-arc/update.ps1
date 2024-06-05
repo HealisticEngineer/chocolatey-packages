@@ -2,7 +2,6 @@ import-module au
 
 function global:au_SearchReplace {
     @{
-        #   softwareName  = 'Azure Arc Agent *1.30*'
         'tools\chocolateyInstall.ps1' = @{
             "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
             "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
@@ -10,7 +9,6 @@ function global:au_SearchReplace {
 
         }
      }
-
 }
  
 function global:au_GetLatest {
