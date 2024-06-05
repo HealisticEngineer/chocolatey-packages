@@ -24,9 +24,13 @@ function global:au_GetLatest {
  
     # construct the download url for the latest version ( Issue this works only with PS5 will need to fix for PS7)
     $url = "https://aka.ms/AzureConnectedMachineAgent"
-    $URL64 = (Invoke-WebRequest -MaximumRedirection 0 -Uri $URL -ErrorAction SilentlyContinue).Headers.Location
-    # if the download url is not found, try to get it from the page
-    if ($URL64 -eq $null) {
+
+    # if powershell 5, use the following code to get the download url
+    if ($PSVersionTable.PSVersion.Major -eq 5) {
+        $URL64 = (Invoke-WebRequest -MaximumRedirection 0 -Uri $URL -ErrorAction SilentlyContinue).Headers.Location
+        # if the download url is not found, try to get it from the page
+     
+    } else {
         $URL64 = (Invoke-WebRequest -Uri $URL  -ErrorAction SilentlyContinue).baseresponse.RequestMessage.RequestUri.AbsoluteUri
     }
 
