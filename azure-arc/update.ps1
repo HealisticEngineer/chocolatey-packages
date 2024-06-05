@@ -6,7 +6,6 @@ function global:au_SearchReplace {
             "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
             "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
             "(^[$]softwareName\s*=\s*)('.*')" = "`$1'Azure Arc Agent *$($Latest.version)*'"
-
         }
      }
 }
