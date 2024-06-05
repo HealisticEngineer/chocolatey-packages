@@ -1,8 +1,8 @@
 $ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = ''
-$checksum   = ''
+$url = ''
+$checksum = ''
 $softwareName = 'Azure Arc Agent *1.30*'
 
 
