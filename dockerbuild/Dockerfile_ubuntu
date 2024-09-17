@@ -1,0 +1,80 @@
+# Build image
+FROM ubuntu:focal AS build
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y wget git apt-utils gnupg apt-transport-https curl
+
+# dotnet dependancies
+RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb && \
+    apt-get install ./packages-microsoft-prod.deb -y && apt-get update && apt-get install dotnet-sdk-6.0 -y && \
+    rm ./packages-microsoft-prod.deb
+
+# mono dependancies
+RUN gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF; \
+    echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | tee /etc/apt/sources.list.d/mono-official-stable.list; \
+    apt-get update && apt-get install mono-devel mono-complete fsharp referenceassemblies-pcl ca-certificates-mono -y
+
+# get choco git
+RUN git clone https://github.com/chocolatey/choco.git 
+
+# build choco
+WORKDIR /choco
+
+RUN chmod +x *.sh
+
+RUN ./build.sh --verbosity=diagnostic; \
+    cp docker/choco_wrapper code_drop/temp/_PublishedApps/choco/choco_wrapper;
+
+# end of choco build start of new image
+
+# Run code
+FROM ubuntu:focal AS install
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
+LABEL org.opencontainers.image.url="https://chocolatey.org/"
+LABEL org.opencontainers.image.documentation="https://docs.chocolatey.org/"
+LABEL org.opencontainers.image.source="https://github.com/chocolatey/choco"
+LABEL org.opencontainers.image.vendor="Chocolatey Software, Inc"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
+LABEL org.opencontainers.image.title="Chocolatey"
+LABEL org.opencontainers.image.description="Chocolatey Client running on Mono"
+LABEL org.opencontainers.image.authors="https://chocolatey.org/support"
+LABEL org.opencontainers.image.base.name="index.docker.io/library/debian:stable"
+
+# copy choco files
+ENV ChocolateyInstall=/opt/chocolatey
+COPY --from=build /choco/code_drop/temp/_PublishedApps/choco /opt/chocolatey
+RUN mkdir /opt/chocolatey/lib; \
+  cp /opt/chocolatey/choco_wrapper usr/local/bin/choco; \
+  cp /opt/chocolatey/choco_wrapper usr/local/bin/choco.exe;
+
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y wget git apt-utils gnupg apt-transport-https curl
+
+# mono dependancies
+RUN gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF; \
+    echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | tee /etc/apt/sources.list.d/mono-official-stable.list; \
+    apt-get update && apt-get install mono-runtime fsharp referenceassemblies-pcl ca-certificates-mono mono-vbnc nuget -y
+
+WORKDIR /root
+
+# Powershell and dependancies
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget apt-utils gnupg apt-transport-https && \
+    apt-get install -y krb5-locales libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 && \
+    wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.4/powershell_7.4.4-1.deb_amd64.deb && \
+    dpkg -i powershell_7.4.4-1.deb_amd64.deb && rm powershell_7.4.4-1.deb_amd64.deb
+
+# Install chocolatey module
+RUN pwsh -Command Install-Module chocolatey-au -F
+
+# copy package
+ADD src /src
+
+WORKDIR /src
+
+CMD pwsh
