@@ -6,7 +6,7 @@ function global:au_BeforeUpdate {
 
 function global:au_SearchReplace {
     @{
-        'tools\chocolateyInstall.ps1' = @{
+        'tools\chocolateyinstall.ps1' = @{
             "(^[$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
             "(^[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
         }
