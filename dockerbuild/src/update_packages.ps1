@@ -23,5 +23,3 @@ foreach ($directory in $directories) {
     # at the end of the loop, go back to the parent directory
     Set-Location ..
 }
-
-# choco push self-hosted-integration-runtime.5.44.8993.1.nupkg -k 65c3c9ca-4c0c-45a9-9aa9-06cfead98442 -s https://push.chocolatey.org/ --allow-unofficial
