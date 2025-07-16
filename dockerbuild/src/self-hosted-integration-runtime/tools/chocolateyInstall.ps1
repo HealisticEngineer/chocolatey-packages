@@ -31,5 +31,5 @@ if ($pp -and $pp['key']) {
   $AUTH_KEY= $($pp['key'])
   $PORT = "8060"
   Start-Process $DmgcmdPath -Wait -ArgumentList "-EnableRemoteAccessInContainer", "$($PORT)"
-  Start-Process $DmgcmdPath -Wait -ArgumentList "-RegisterNewNode", $($AUTH_KEY)", "$($NODE_NAME)" 
+  Start-Process $DmgcmdPath -Wait -ArgumentList "-RegisterNewNode", "$($AUTH_KEY)", "$($NODE_NAME)" 
 }
