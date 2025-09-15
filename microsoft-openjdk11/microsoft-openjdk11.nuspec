@@ -17,7 +17,10 @@
     <mailingListUrl>https://www.microsoft.com/openjdk</mailingListUrl>
     <bugTrackerUrl>https://github.com/microsoft/openjdk/discussions</bugTrackerUrl>
     <iconUrl>https://cdn.statically.io/gh/HealisticEngineer/chocolatey-packages/main/icons/microsoft-openjdk.png</iconUrl>
-    <description>Microsoft OpenJDK is an open source Java Development Kit build of OpenJDK provided by Microsoft</description>
+    <description>Microsoft OpenJDK is an open source Java Development Kit build of OpenJDK provided by Microsoft. 
+    Install switches: INSTALLLEVEL=3 /quiet [INSTALLDIR="C:\your\path\here"]. 
+    Example: choco install microsoft-openjdk-11 --params "'INSTALLDIR=C:\\Program Files\\OpenJDK'"
+    </description>
     <releaseNotes>https://learn.microsoft.com/en-us/java/openjdk/release-notes</releaseNotes>
   </metadata>
   <files>
