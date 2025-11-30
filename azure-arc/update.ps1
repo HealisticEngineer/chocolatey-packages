@@ -18,7 +18,7 @@ function global:au_GetLatest {
     # download the page that contains the latest version number
     $url = "https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-release-notes"
     # regex expresion to find version number example 1.38
-    $regex = ([regex]"version\s(\d+\.\d+)")
+    $regex = ([regex]"version\s(1.\d+)")
     # sort numbers and get highest number
     $version = (((Invoke-WebRequest $url -UseBasicParsing).RawContent | Select-String "$regex" -AllMatches ).Matches.Value | Sort-Object -Descending -Unique)[0] -split " " | Select-Object -Last 1
  
