@@ -66,8 +66,8 @@ WORKDIR /root
 # Powershell and dependancies
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget apt-utils gnupg apt-transport-https && \
     apt-get install -y krb5-locales libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 && \
-    wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.4/powershell_7.4.4-1.deb_amd64.deb && \
-    dpkg -i powershell_7.4.4-1.deb_amd64.deb && rm powershell_7.4.4-1.deb_amd64.deb
+    wget https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell_7.5.4-1.deb_amd64.deb && \
+    dpkg -i powershell_7.5.4-1.deb_amd64.deb && rm powershell_7.5.4-1.deb_amd64.deb
 
 # Install chocolatey module
 RUN pwsh -Command Install-Module chocolatey-au -F
