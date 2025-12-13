@@ -77,4 +77,4 @@ ADD src /src
 
 WORKDIR /src
 
-CMD pwsh
+CMD ["pwsh"]
