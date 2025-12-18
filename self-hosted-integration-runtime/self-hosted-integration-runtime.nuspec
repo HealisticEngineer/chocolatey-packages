@@ -4,12 +4,12 @@
   <metadata>
     <id>self-hosted-integration-runtime</id>
     <version>5.61.9466.1</version>
-    <packageSourceUrl>https://github.com/HealisticEngineer/AzureSHIR/tree/main/Chocolatey/self-hosted-integration-runtime</packageSourceUrl>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/self-hosted-integration-runtime</packageSourceUrl>
     <owners>HealisticEngineer</owners>
     <title>Microsoft Integration Runtime</title>
     <authors>Microsoft Corporation</authors>
     <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=39717</projectUrl>
-    <iconUrl>https://cdn.statically.io/gh/HealisticEngineer/AzureSHIR/main/Chocolatey/data-factory.svg</iconUrl>
+    <iconUrl>https://cdn.statically.io/gh/HealisticEngineer/chocolatey-packages@main/self-hosted-integration-runtime/data-factory.svg</iconUrl>
     <copyright>2019 Microsoft Corporation</copyright>
     <licenseUrl>https://github.com/Azure/Azure-DataFactory/blob/main/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
