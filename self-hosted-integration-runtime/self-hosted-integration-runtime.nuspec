@@ -2,8 +2,8 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>microsoft-integration-runtime</id>
-    <version>5.60.9444.1</version>
+    <id>self-hosted-integration-runtime</id>
+    <version>5.61.9466.1</version>
     <packageSourceUrl>https://github.com/HealisticEngineer/AzureSHIR/tree/main/Chocolatey/self-hosted-integration-runtime</packageSourceUrl>
     <owners>HealisticEngineer</owners>
     <title>Microsoft Integration Runtime</title>
