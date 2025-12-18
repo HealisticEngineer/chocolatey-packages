@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>purview-ir</id>
-    <version>5.50.9251.1</version>
+    <version>5.51.9365.1</version>
     <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/purview-ir</packageSourceUrl>
     <owners>HealisticEngineer</owners>
     <title>Microsoft Purview Integration Runtime</title>
