@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-openjdk25</id>
-    <version>25.0.1</version>
+    <version>25.0.2</version>
     <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/microsoft-openjdk25</packageSourceUrl>
     <title>Microsoft build of OpenJDK 25</title>
     <authors>Microsoft</authors>
