@@ -1,5 +1,5 @@
 # Build image
-FROM ubuntu:focal AS build
+FROM ubuntu:jammy AS build
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -9,8 +9,8 @@ RUN apt-get update && \
     apt-get install -y wget git apt-utils gnupg apt-transport-https curl
 
 # dotnet dependancies
-RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb && \
-    apt-get install ./packages-microsoft-prod.deb -y && apt-get update && apt-get install dotnet-sdk-6.0 -y && \
+RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb && \
+    apt-get install ./packages-microsoft-prod.deb -y && apt-get update && apt-get install dotnet-sdk-8.0 -y && \
     rm ./packages-microsoft-prod.deb
 
 # mono dependancies
@@ -27,12 +27,13 @@ WORKDIR /choco
 RUN chmod +x *.sh
 
 RUN ./build.sh --verbosity=diagnostic; \
-    cp docker/choco_wrapper code_drop/temp/_PublishedApps/choco/choco_wrapper;
+    cp docker/choco_wrapper code_drop/temp/_PublishedApps/choco/net48/choco_wrapper;
+
 
 # end of choco build start of new image
 
 # Run code
-FROM ubuntu:focal AS install
+FROM ubuntu:jammy AS install
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
@@ -48,7 +49,7 @@ LABEL org.opencontainers.image.base.name="index.docker.io/library/debian:stable"
 
 # copy choco files
 ENV ChocolateyInstall=/opt/chocolatey
-COPY --from=build /choco/code_drop/temp/_PublishedApps/choco /opt/chocolatey
+COPY --from=build /choco/code_drop/temp/_PublishedApps/choco/net48 /opt/chocolatey
 RUN mkdir /opt/chocolatey/lib; \
   cp /opt/chocolatey/choco_wrapper usr/local/bin/choco; \
   cp /opt/chocolatey/choco_wrapper usr/local/bin/choco.exe;
