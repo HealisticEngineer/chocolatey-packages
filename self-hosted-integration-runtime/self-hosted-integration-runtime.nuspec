@@ -29,9 +29,9 @@
       #### Supported Operating System
 
       Windows 11, Windows Server 2019, Windows Server 2022, Windows Server 2025
-      Download and run the IntergrationRuntime.msi (64-bit) to install the Integration Runtime on your computer
+      Download and run the IntegrationRuntime.msi (64-bit) to install the Integration Runtime on your computer.
 
-      * Note: The self-hosted integration runtime is will run on Windows 10 and Windows server 2016, however, due to them being remove from mainstream support they have been dropped from the support of this package.
+      * Note: The self-hosted integration runtime will run on Windows 10 and Windows Server 2016, however, due to them being removed from mainstream support they have been dropped from the support of this package.
 
       Installation of the self-hosted integration runtime on a domain controller isn't supported.
 
