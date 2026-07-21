@@ -13,6 +13,7 @@ Big shout out to [johanjanssen](https://github.com/johanjanssen) for maintaining
 * **[microsoft-openjdk25](https://community.chocolatey.org/packages/microsoft-openjdk25)** ([folder](microsoft-openjdk25)) - Microsoft Build of OpenJDK 25
 * **[purview-ir](https://community.chocolatey.org/packages/purview-ir)** ([folder](purview-ir)) - Microsoft Purview Integration Runtime
 * **[self-hosted-integration-runtime](https://community.chocolatey.org/packages/self-hosted-integration-runtime)** ([folder](self-hosted-integration-runtime)) - Azure Data Factory Self-Hosted Integration Runtime
+* **[tursodb](https://community.chocolatey.org/packages/tursodb)** ([folder](tursodb)) - Turso CLI
 
 ### Folder Structure
 
