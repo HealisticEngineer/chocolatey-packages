@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>tursodb</id>
+    <version>0.6.0</version>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/tursodb</packageSourceUrl>
+    <owners>HealisticEngineer</owners>
+    <title>tursodb (Turso CLI)</title>
+    <authors>tursodatabase</authors>
+    <projectUrl>https://github.com/tursodatabase/turso</projectUrl>
+    <licenseUrl>https://github.com/tursodatabase/turso/blob/main/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://github.com/tursodatabase/turso#readme</docsUrl>
+    <bugTrackerUrl>https://github.com/tursodatabase/turso/issues</bugTrackerUrl>
+    <tags>turso tursodb sqlite database cli embedded-database rust</tags>
+    <summary>Command-line interface for tursodb, a SQLite-compatible embedded database</summary>
+    <description>Turso is an in-process SQL database, compatible with SQLite, written in Rust.
+
+This package installs `tursodb.exe`, the Turso CLI, allowing you to create and interact with Turso/SQLite-compatible database files directly from the command line.
+
+Binaries are downloaded at install time directly from the official [tursodatabase/turso GitHub releases](https://github.com/tursodatabase/turso/releases) and are not embedded in this package.
+
+By default `tursodb.exe` is extracted into this package's own tools folder under `%ChocolateyInstall%\lib\tursodb`. To install to a custom location instead, pass an `InstallDir` package parameter:
+
+    choco install tursodb --params "'/InstallDir:C:\tools\tursodb'"
+
+`tursodb` is put on PATH via a Chocolatey shim regardless of which location is used.</description>
+    <releaseNotes>https://github.com/tursodatabase/turso/releases</releaseNotes>
+  </metadata>
+</package>
