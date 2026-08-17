@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>tursodb</id>
-    <version>0.7.2</version>
+    <version>0.7.1</version>
     <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/tursodb</packageSourceUrl>
     <owners>HealisticEngineer</owners>
     <title>tursodb (Turso CLI)</title>
@@ -27,4 +27,7 @@ By default `tursodb.exe` is extracted into this package's own tools folder under
 `tursodb` is put on PATH via a Chocolatey shim regardless of which location is used.</description>
     <releaseNotes>https://github.com/tursodatabase/turso/releases</releaseNotes>
   </metadata>
+  <files>
+    <file src="tools\*.ps1" target="tools" />
+  </files>
 </package>
