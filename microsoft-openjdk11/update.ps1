@@ -19,8 +19,8 @@ function global:au_GetLatest {
    # Get the version number
    # Send another web request to the specified URL
    $response = Invoke-WebRequest -Uri "https://learn.microsoft.com/en-us/java/openjdk/download"
-   # Check if the response content contains a test OpenJDK 17.x.x
-   if($response.content -match "OpenJDK 11\.\d+\.\d+") {
+   # Check if the response content contains a test OpenJDK 11.x.x or 11.x.x.x
+   if($response.content -match "OpenJDK 11\.\d+\.\d+(?:\.\d+)?") {
        # If it does, create a hashtable with the URL and version number
        $Version = ($Matches[0] -split " ")[1]
    } else {

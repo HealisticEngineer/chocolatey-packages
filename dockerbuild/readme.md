@@ -46,8 +46,16 @@ To build the Docker image, follow these steps:
 
 ## Running the Docker Container
 
-To run the Docker container, you can use the following command:
+To run the Docker container, you first need to create a `.env` file with your secrets:
 
 ```
-docker run -it --rm choco:latest-ubuntu
+cp .env.template .env
+```
+
+Edit `.env` and fill in your Chocolatey API key and GitHub PAT.
+
+Then run the container with the `--env-file` flag to inject the secrets:
+
+```
+docker run -it --rm --env-file .env choco:latest-ubuntu
 ```
