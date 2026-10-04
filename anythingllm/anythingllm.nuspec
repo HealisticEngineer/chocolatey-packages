@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>anythingllm</id>
+    <version>1.16.0</version>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/anythingllm</packageSourceUrl>
+    <owners>HealisticEngineer</owners>
+    <title>AnythingLLM Desktop</title>
+    <authors>Mintplex Labs</authors>
+    <projectUrl>https://anythingllm.com</projectUrl>
+    <licenseUrl>https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://docs.anythingllm.com</docsUrl>
+    <bugTrackerUrl>https://github.com/Mintplex-Labs/anything-llm/issues</bugTrackerUrl>
+    <tags>anythingllm llm ai rag chat agents desktop admin</tags>
+    <summary>All-in-one AI desktop app: chat with your documents using any LLM</summary>
+    <description>AnythingLLM is an all-in-one AI application that lets you chat with your documents, use AI agents, and run local or cloud LLMs with a built-in vector database.
+
+The installer is downloaded at install time directly from the official [Mintplex-Labs/anything-llm GitHub releases](https://github.com/Mintplex-Labs/anything-llm/releases) and is not embedded in this package.</description>
+    <releaseNotes>https://github.com/Mintplex-Labs/anything-llm/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\*.ps1" target="tools" />
+  </files>
+</package>
