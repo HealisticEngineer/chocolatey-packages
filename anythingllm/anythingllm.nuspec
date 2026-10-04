@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>anythingllm</id>
-    <version>1.16.0</version>
+    <version>1.17.0</version>
     <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/anythingllm</packageSourceUrl>
     <owners>HealisticEngineer</owners>
     <title>AnythingLLM Desktop</title>
