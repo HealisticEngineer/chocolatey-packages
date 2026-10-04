@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>zed</id>
+    <version>1.21.0</version>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/zed</packageSourceUrl>
+    <owners>HealisticEngineer</owners>
+    <title>Zed</title>
+    <authors>Zed Industries</authors>
+    <projectUrl>https://zed.dev</projectUrl>
+    <iconUrl>https://cdn.statically.io/gh/HealisticEngineer/chocolatey-packages/main/icons/zed.png</iconUrl>
+    <licenseUrl>https://github.com/zed-industries/zed/blob/main/LICENSE-GPL</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://zed.dev/docs</docsUrl>
+    <bugTrackerUrl>https://github.com/zed-industries/zed/issues</bugTrackerUrl>
+    <tags>zed editor code-editor ide rust collaboration ai</tags>
+    <summary>High-performance, multiplayer code editor</summary>
+    <description>Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter, written in Rust.
+
+The installer is downloaded at install time directly from the official [zed-industries/zed GitHub releases](https://github.com/zed-industries/zed/releases) and is not embedded in this package. Only stable releases are tracked, not pre-releases.</description>
+    <releaseNotes>https://github.com/zed-industries/zed/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\*.ps1" target="tools" />
+  </files>
+</package>
