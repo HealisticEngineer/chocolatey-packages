@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>affine</id>
+    <version>0.26.0</version>
+    <packageSourceUrl>https://github.com/HealisticEngineer/chocolatey-packages/tree/main/affine</packageSourceUrl>
+    <owners>HealisticEngineer</owners>
+    <title>AFFiNE</title>
+    <authors>TOEVERYTHING PTE. LTD.</authors>
+    <projectUrl>https://affine.pro</projectUrl>
+    <licenseUrl>https://github.com/toeverything/AFFiNE/blob/canary/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.statically.io/gh/HealisticEngineer/chocolatey-packages/main/icons/affine.png</iconUrl>
+    <docsUrl>https://docs.affine.pro</docsUrl>
+    <bugTrackerUrl>https://github.com/toeverything/AFFiNE/issues</bugTrackerUrl>
+    <tags>affine notes docs whiteboard knowledge-base notion-alternative productivity admin</tags>
+    <summary>Privacy-focused, local-first workspace combining docs, whiteboards and databases</summary>
+    <description>AFFiNE is an open-source, local-first workspace that brings docs, whiteboards and databases together in one app - a privacy-focused alternative to Notion and Miro.
+
+The installer is downloaded at install time directly from the official [toeverything/AFFiNE GitHub releases](https://github.com/toeverything/AFFiNE/releases) (stable releases only) and is not embedded in this package.</description>
+    <releaseNotes>https://github.com/toeverything/AFFiNE/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\*.ps1" target="tools" />
+  </files>
+</package>
