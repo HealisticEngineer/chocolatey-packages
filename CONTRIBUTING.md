@@ -47,6 +47,19 @@ We welcome various types of contributions:
 
 ## Package Guidelines
 
+### Before Creating a New Package (Required)
+
+Always confirm the package does not already exist **before** creating it. Packages that are unpublished, in moderation, unlisted or rejected do not show up in `choco search`, so the only reliable check is the package page itself:
+
+```powershell
+curl.exe -s -o NUL -w "%{http_code}" https://community.chocolatey.org/packages/<package-id>
+```
+
+- `404` – the ID is free; you may create the package.
+- `200` – the package exists (even if pending or unlisted). Do **not** create a duplicate; update/adopt the existing one instead.
+
+Also check this repository for an existing folder with the same or a similar name (e.g. `microsoft-openjdk11` vs `microsoft-openjdk-11`). Note the result of the check in your PR description.
+
 ### Package Structure
 
 Each package should follow this structure:
