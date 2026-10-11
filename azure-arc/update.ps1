@@ -18,9 +18,12 @@ function global:au_GetLatest {
     # download the page that contains the latest version number
     $url = "https://docs.azure.cn/en-us/azure-arc/servers/agent-release-notes"
     # regex expresion to find version number example 1.38
-    $regex = ([regex]"version\s(1.\d+)")
-    # sort numbers and get highest number
-    $version = (((Invoke-WebRequest $url -UseBasicParsing).RawContent | Select-String "$regex" -AllMatches ).Matches.Value | Sort-Object -Descending -Unique)[0] -split " " | Select-Object -Last 1
+    # only match release headings; body text can mention unreleased versions
+    $regex = '<h2[^>]*>\s*Version\s+(1\.\d+(?:\.\d+)*)'
+    # sort numerically as [version] (string sort would rank 1.9 above 1.69) and get highest
+    $content = (Invoke-WebRequest $url -UseBasicParsing).RawContent
+    $version = [regex]::Matches($content, $regex) | ForEach-Object { [version]$_.Groups[1].Value } | Sort-Object -Descending -Unique | Select-Object -First 1
+    $version = $version.ToString()
  
     $URL64 = "https://gbl.his.arc.azure.com/azcmagent/$version/AzureConnectedMachineAgent.msi"
 
