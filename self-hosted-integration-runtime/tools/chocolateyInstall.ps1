@@ -28,7 +28,10 @@ if ($pp -and $pp['key']) {
   # Enable remote access and register the node with the provided key
   $DmgcmdPath = "C:\Program Files\Microsoft Integration Runtime\5.0\Shared\dmgcmd.exe"
   $NODE_NAME = $Env:COMPUTERNAME
-  $AUTH_KEY= $($pp['key'])
+  $AUTH_KEY = $($pp['key'])
+if (-not ($AUTH_KEY -match "^[a-zA-Z0-9\-_]+$")) {
+  Write-Error "Authentication key contains invalid characters. Only alphanumeric characters, dashes, and underscores are allowed."
+}
   $PORT = "8060"
   Start-Process $DmgcmdPath -Wait -ArgumentList "-EnableRemoteAccessInContainer", "$($PORT)"
   Start-Process $DmgcmdPath -Wait -ArgumentList "-RegisterNewNode", "$($AUTH_KEY)", "$($NODE_NAME)" 
