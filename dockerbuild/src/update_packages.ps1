@@ -1,7 +1,3 @@
-# set enviorment variables
-$env:api        = ''
-$env:github     = ''
-
 # clone the repository
 git clone https://github.com/HealisticEngineer/chocolatey-packages.git
 
@@ -53,7 +49,7 @@ foreach ($directory in $directories) {
         ./update.ps1
         # if file with .nupkg extension exists, push it to chocolatey
         $nupkg = (Get-Item *.nupkg).name
-        if ($nupkg) { choco push $nupkg -k $env:api -s https://push.chocolatey.org/ --allow-unofficial }
+        if ($nupkg) { choco push $nupkg -k $env:CHOCO_API_KEY -s https://push.chocolatey.org/ --allow-unofficial }
     }
 
     # at the end of the loop, go back to the parent directory
