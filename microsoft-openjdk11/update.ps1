@@ -20,9 +20,12 @@ function global:au_GetLatest {
    # Send another web request to the specified URL
    $response = Invoke-WebRequest -Uri "https://learn.microsoft.com/en-us/java/openjdk/download"
    # Check if the response content contains a test OpenJDK 11.x.x or 11.x.x.x
-   if($response.content -match "OpenJDK 11\.\d+\.\d+(?:\.\d+)?") {
+   if($response.content -match "OpenJDK 11\.\d+\.\d+(?:\.\d+)*") {
        # If it does, create a hashtable with the URL and version number
        $Version = ($Matches[0] -split " ")[1]
+       # NuGet allows max 4 parts, so e.g. 25.0.5.0.2 becomes 25.0.5.2 for the package
+       $parts = $Version -split '\.'
+       $PackageVersion = if ($parts.Count -gt 4) { ($parts[0..2] + $parts[-1]) -join '.' } else { $Version }
    } else {
        # If it doesn't, return an empty hashtable
        return @{}
@@ -31,7 +34,7 @@ function global:au_GetLatest {
    # Create a hashtable with the URL and version number of the latest update
    $Latest = @{ 
         URL64 = "https://aka.ms/download-jdk/microsoft-jdk-$version-windows-x64.msi"
-        Version = $Version
+        Version = $PackageVersion
    }
    # Return the hashtable
    Return $latest
