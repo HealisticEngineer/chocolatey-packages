@@ -16,13 +16,15 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
 
     # download the page that contains the latest version number
-    $url = "https://docs.azure.cn/en-us/azure-arc/servers/agent-release-notes"
-    # regex expresion to find version number example 1.38
+    $url = "https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-release-notes"
     # only match release headings; body text can mention unreleased versions
     $regex = '<h2[^>]*>\s*Version\s+(1\.\d+(?:\.\d+)*)'
     # sort numerically as [version] (string sort would rank 1.9 above 1.69) and get highest
     $content = (Invoke-WebRequest $url -UseBasicParsing).RawContent
     $version = [regex]::Matches($content, $regex) | ForEach-Object { [version]$_.Groups[1].Value } | Sort-Object -Descending -Unique | Select-Object -First 1
+    if (-not $version) {
+        throw "No Azure Connected Machine agent release headings found at $url"
+    }
     $version = $version.ToString()
  
     $URL64 = "https://gbl.his.arc.azure.com/azcmagent/$version/AzureConnectedMachineAgent.msi"
