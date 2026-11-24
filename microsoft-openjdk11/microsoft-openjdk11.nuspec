@@ -6,6 +6,7 @@
     <title>Microsoft build of OpenJDK 11</title>
     <authors>Microsoft</authors>
     <owners>HealisticEngineer</owners>
+    <copyright>Copyright (c) 2026 Microsoft Corporation</copyright>
     <licenseUrl>https://github.com/microsoft/openjdk/discussions/2</licenseUrl>
     <projectUrl>https://www.microsoft.com/openjdk</projectUrl>
     <summary>Microsoft build of OpenJDK</summary>
